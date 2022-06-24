@@ -1,0 +1,13 @@
+<button (click)="alpha$.next(alphaService.api(alphaCounter))">Alpha API</button>
+&ngsp;
+<button (click)="bravo$.next(bravoService.api(bravoCounter))">Bravo API</button>
+&ngsp;
+<button (click)="charlie$.next(charlieService.api(charlieCounter))">
+  Charlie API
+</button>
+
+<hr />
+<ng-container *ngIf="widgetModel$ | async as widgetModel">
+  <h3>We have result</h3>
+  <pre>{{ widgetModel | json }}</pre>
+</ng-container>

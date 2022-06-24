@@ -1,0 +1,58 @@
+<h2>Async pipe all the way up</h2>
+<table class="myTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User Name</th>
+      <th>Email</th>
+      <th style="width: 40%">Address</th>
+      <th></th>
+    </tr>
+  </thead>
+  <ng-container *ngIf="users$ | async as users; else loading">
+    <tbody>
+      <ng-template
+        ngFor
+        [ngForOf]="users"
+        [ngForTrackBy]="trackByFn"
+        let-user
+        let-i="index"
+      >
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>
+            {{ user.address.street }}, {{ user.address.city }},
+            {{ user.address.zipcode }}
+          </td>
+          <td style="text-align: center">
+            <button (click)="selectedUserId$.next(user.id)">+</button>
+          </td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </ng-container>
+  <ng-template #loading>
+    <tbody>
+      <tr>
+        <td colspan="4" style="text-align: center">Loading...</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </ng-template>
+</table>
+
+<ul>
+  <li>{{ (singleUser$ | async)?.name }}</li>
+  <li>{{ (singleUser$ | async)?.username }}</li>
+  <li>{{ (singleUser$ | async)?.email }}</li>
+</ul>
+
+<hr />
+
+<ul>
+  <ng-template ngFor [ngForOf]="userTodos$ | async" let-todo>
+    <li [ngClass]="{ done: todo.completed }">{{ todo.title }}</li>
+  </ng-template>
+</ul>

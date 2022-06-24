@@ -1,0 +1,24 @@
+:host ::ng-deep {
+  .myTable {
+    width: 100%;
+    border: 1px solid #c0c0c0;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+  .myTable caption {
+    text-align: left;
+  }
+  .myTable th {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+    background: #f0f0f0;
+  }
+  .myTable td {
+    border: 1px solid #c0c0c0;
+    padding: 5px;
+  }
+
+  .done {
+    text-decoration: line-through;
+  }
+}
