@@ -1,15 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import {
-  GlobalState,
-  SharedStateService,
-} from '../../shared-state/shared-state.service';
+import { GlobalState, SharedStateService } from '../../shared-state.service';
 @Component({
-  selector: 'app-page-b',
-  templateUrl: './page-b.component.html',
-  styleUrls: ['./page-b.component.scss'],
+  selector: 'app-child',
+  templateUrl: './child.component.html',
+  styleUrls: ['./child.component.scss'],
 })
-export class PageBComponent implements OnInit {
+export class ChildComponent implements OnInit {
   vm$!: Observable<GlobalState>;
   constructor(private sharedState: SharedStateService) {}
 
@@ -19,9 +16,5 @@ export class PageBComponent implements OnInit {
 
   fooUp() {
     this.sharedState.fooUp();
-  }
-
-  fooReset() {
-    this.sharedState.set(0);
   }
 }

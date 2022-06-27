@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { SharedStateService } from '../../shared-state/shared-state.service';
+import { Observable } from 'rxjs';
+import { GlobalState, SharedStateService } from '../../shared-state/shared-state.service';
 
 @Component({
   selector: 'app-page-a',
@@ -7,7 +8,14 @@ import { SharedStateService } from '../../shared-state/shared-state.service';
   styleUrls: ['./page-a.component.scss'],
 })
 export class PageAComponent implements OnInit {
-  constructor(private sharedStateService: SharedStateService) {}
+  public vm$!: Observable<GlobalState>;
+  constructor(private sharedState: SharedStateService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.vm$ = this.sharedState.get();
+  }
+
+  fooUp() {
+    this.sharedState.fooUp();
+  }
 }

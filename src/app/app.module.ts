@@ -9,7 +9,10 @@ import { PageAComponent } from './shared-state/page-a/page-a.component';
 import { PageBComponent } from './shared-state/page-b/page-b.component';
 import { ZipComponent } from './zip/zip.component';
 import { MergeMapComponent } from './merge-map/merge-map.component';
-import { ProtectedComponent } from './protected/protected.component';
+import { ParentComponent } from './shared-state/page-a/parent/parent.component';
+import { ChildComponent } from './shared-state/page-a/child/child.component';
+import { ContainerComponent } from './shared-state/container/container.component';
+import { ConcatAddress } from './pipes/concatAddress.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { ProtectedComponent } from './protected/protected.component';
     PageBComponent,
     ZipComponent,
     MergeMapComponent,
-    ProtectedComponent,
+    ParentComponent,
+    ChildComponent,
+    ContainerComponent,
+    ConcatAddress,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

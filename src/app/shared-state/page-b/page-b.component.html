@@ -1,1 +1,6 @@
-<p>page-b works!</p>
+<div class="wrapper">
+  <button (click)="fooUp()">+</button>
+  <button (click)="fooReset()">0</button> <br>
+  <div>{{ (vm$ | async)?.foo }}</div>
+  {{ (vm$ | async)?.timeStamp | date: 'long' }}
+</div>

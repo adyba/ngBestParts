@@ -1,17 +1,27 @@
-<button (click)="dispatchPageChange('/simplePage', 1)">Simple Page (1)</button>
-&nbsp;
-<button (click)="dispatchPageChange('/fancyPage', 3)">Fancy Page (3)</button>
+<br>
 <hr />
-<button (click)="alpha$.next(alphaService.api(alphaCounter))">Alpha API</button>
-&ngsp;
-<button (click)="bravo$.next(bravoService.api(bravoCounter))">Bravo API</button>
-&ngsp;
-<button (click)="charlie$.next(charlieService.api(charlieCounter))">
-  Charlie API
-</button>
+<div>
+  <button (click)="dispatchPageChange('/simplePage', 1)">
+    Simple Page (1)
+  </button>
+  &nbsp;
+  <button (click)="dispatchPageChange('/fancyPage', 3)">Fancy Page (3)</button>
+  <hr />
+  <button (click)="alpha$.next(alphaService.api(alphaCounter))">
+    Alpha API
+  </button>
+  &ngsp;
+  <button (click)="bravo$.next(bravoService.api(bravoCounter))">
+    Bravo API
+  </button>
+  &ngsp;
+  <button (click)="charlie$.next(charlieService.api(charlieCounter))">
+    Charlie API
+  </button>
 
-<hr />
-<ng-container *ngIf="result$ | async as result">
-  <h3>We have result</h3>
-  <pre>{{ result | json }}</pre>
-</ng-container>
+  <hr />
+  <ng-container *ngIf="result$ | async as result">
+    <h3>We have result</h3>
+    <pre>{{ result | json }}</pre>
+  </ng-container>
+</div>

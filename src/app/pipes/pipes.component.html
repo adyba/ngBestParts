@@ -1,1 +1,38 @@
-<p>pipes works!</p>
+<h2>Pipes are good</h2>
+<table class="myTable">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>User Name</th>
+      <th>Email</th>
+      <th style="width: 40%">Address</th>
+    </tr>
+  </thead>
+  <ng-container *ngIf="users$ | async as users; else loading">
+    <tbody>
+      <ng-template
+        ngFor
+        [ngForOf]="users"
+        [ngForTrackBy]="trackByFn"
+        let-user
+        let-i="index"
+      >
+        <tr>
+          <td>{{ user.name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <!-- <td>{{concatAddressFunction(user.address)}}</td> -->
+          <td>{{ user.address | concatAddress }}</td>
+        </tr>
+      </ng-template>
+    </tbody>
+  </ng-container>
+  <ng-template #loading>
+    <tbody>
+      <tr>
+        <td colspan="4" style="text-align: center">Loading...</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </ng-template>
+</table>
