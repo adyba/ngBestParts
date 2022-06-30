@@ -6,7 +6,7 @@ import { Address, User } from '../models/user.model';
 })
 export class ConcatAddress implements PipeTransform {
   transform(value: Address, ...args: unknown[]): unknown {
-    console.log('concatFunction');
+    console.log('concatPipe');
     return `${value.street}, ${value.city}, ${value.zipcode}`;
   }
 }

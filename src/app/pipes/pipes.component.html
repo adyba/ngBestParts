@@ -1,11 +1,12 @@
 <h2>Pipes are good</h2>
+<button (click)="counter=counter+1">+</button>
 <table class="myTable">
   <thead>
     <tr>
       <th>Name</th>
       <th>User Name</th>
-      <th>Email</th>
-      <th style="width: 40%">Address</th>
+      <th style="width: 30%">Function</th>
+      <th style="width: 30%">Pipe</th>
     </tr>
   </thead>
   <ng-container *ngIf="users$ | async as users; else loading">
@@ -20,8 +21,7 @@
         <tr>
           <td>{{ user.name }}</td>
           <td>{{ user.username }}</td>
-          <td>{{ user.email }}</td>
-          <!-- <td>{{concatAddressFunction(user.address)}}</td> -->
+          <td>{{concatAddressFunction(user.address)}}</td>
           <td>{{ user.address | concatAddress }}</td>
         </tr>
       </ng-template>

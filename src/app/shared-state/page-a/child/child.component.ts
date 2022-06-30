@@ -14,7 +14,8 @@ export class ChildComponent implements OnInit {
     this.vm$ = this.sharedState.get();
   }
 
-  fooUp() {
-    this.sharedState.fooUp();
+  counterUp() {
+    console.log('counterUp from childs');
+    this.sharedState.counterUp();
   }
 }

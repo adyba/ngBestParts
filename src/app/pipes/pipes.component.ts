@@ -9,6 +9,7 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./pipes.component.scss'],
 })
 export class PipesComponent implements OnInit {
+  counter = 0
   users$!: Observable<User[]>;
   constructor(private userService: UserService) {}
 

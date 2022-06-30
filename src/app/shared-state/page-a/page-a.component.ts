@@ -15,7 +15,7 @@ export class PageAComponent implements OnInit {
     this.vm$ = this.sharedState.get();
   }
 
-  fooUp() {
-    this.sharedState.fooUp();
+  counterUp() {
+    this.sharedState.counterUp();
   }
 }

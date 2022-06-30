@@ -1,6 +1,6 @@
 <div class="wrapper">
-  <button (click)="fooUp()">+</button>
+  <button (click)="counterUp()">+</button>
   <button (click)="fooReset()">0</button> <br>
-  <div>{{ (vm$ | async)?.foo }}</div>
+  <div>{{ (vm$ | async)?.counter }}</div>
   {{ (vm$ | async)?.timeStamp | date: 'long' }}
 </div>
